@@ -7,7 +7,7 @@
 
 <p>
   <strong>Author:</strong>
-  <%= @post.author %>
+  <%= @post.user.email %>
 </p>
 
 <p>
@@ -24,8 +24,9 @@
 <h4>What others have said:</h4>
 <% @post.comments.each do |comment| %>
 <p>
-	<%= comment.author %> said...<br/>
-	<%= 
+	<%= comment.user.email %> said...<br/>
+	<%= comment.comment_entry %>
 </p>
+<% end %>
 
 <%= link_to 'Back', posts_path %>
